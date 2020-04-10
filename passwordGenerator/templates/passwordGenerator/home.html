@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<div class="container text-center"><h1>Bem-vindo ao portal de ferramentas integradas da Lunatic</h1></div>
+
+<div class="container text-center">
+  <h2>Esse é o gerador de senhas, fique à vontade para gerar senhas com os critérios que você mesmo definir. </h2>
+  <h3>Selecione abaixo os parâmetros que você deseja que sejam considerados na geração da senha:</h3>
+  <form class="" action="{% url 'geraSenha' %}" >
+    <select class="" name="length">
+      <option value="6">Senha de 6 caracteres</option>
+      <option value="7">Senha de 7 caracteres</option>
+      <option value="8">Senha de 8 caracteres</option>
+      <option value="9">Senha de 9 caracteres</option>
+      <option value="10">Senha de 10 caracteres</option>
+      <option value="11">Senha de 11 caracteres</option>
+      <option value="12" selected="selected">Senha de 12 caracteres</option>
+      <option value="13">Senha de 13 caracteres</option>
+      <option value="14">Senha de 14 caracteres</option>
+      <option value="15">Senha de 15 caracteres</option>
+    </select>
+    <br />
+    <input type="checkbox" name="uppercase">Letras Maiúsculas
+    <br />
+    <input type="checkbox" name="numbers">Números
+    <br />
+    <input type="checkbox" name="special">Caracteres Especiais
+    <br />
+    <input type="submit" name="" class="btn btn-primary" value="Gerar Senha">
+  </form>
+</div>
+
+<div class="container text-center">
+<h2>Essa é a calculadora, utilize-a à vontade:</h2>
+  <form class="" action="{% url 'calculate' %}" >
+    Primeiro Número: <input pattern="[0-9]{1,9}" type="text" name="numum" value="">
+    <br />
+    Segundo Número: <input pattern="[0-9]{1,9}" type="text" name="numdois" value="">
+    <br />
+    <table class="table table-hover">
+      <tr class="">
+        <th class=""><input type="radio" name="operation" value="soma"> Soma</th>
+        <th><input type="radio" name="operation" value="subtracao"> Subtração</th>
+        <th><input type="radio" name="operation" value="multiplicacao"> Multiplicação</th>
+        <th><input type="radio" name="operation" value="divisao"> Divisão</th>
+      </tr>
+      <tr class="">
+        <th><input type="radio" name="operation" value="raiz"> Raiz Quadrada</th>
+        <th><input type="radio" name="operation" value="percentual"> Percentual</th>
+        <th><input type="radio" name="operation" value="rest"> Resto da divisão</th>
+        <th><input type="radio" name="operation" value="gcd"> Menor divisor comum</th>
+      </tr>
+      <tr class="">
+        <th><input type="radio" name="operation" value="expoent"> Exponenciação</th>
+        <th><input type="radio" name="operation" value="euler"> Constante "e" elevado a potência x</th>
+        <th><input type="radio" name="operation" value="euler-1"> Constante "e" elevado a potência x -1</th>
+        <th><input type="radio" name="operation" value="logbe"> Log de x na base e</th>
+      </tr>
+      <tr class="">
+        <th><input type="radio" name="operation" value="logx2"> Log de x na base 2</th>
+        <th><input type="radio" name="operation" value="logx10"> Log de x na base 10</th>
+        <th><input type="radio" name="operation" value="senx"> Seno de X</th>
+        <th><input type="radio" name="operation" value="cosx"> Cosseno de X</th>
+      </tr>
+      <tr class="">
+        <th><input type="radio" name="operation" value="tangx"> Tangente de X</th>
+        <th><input type="radio" name="operation" value="radx"> Converte X de raios para graus</th>
+        <th><input type="radio" name="operation" value="radd"> Converte X de graus para raios</th>
+      </tr>
+      </table>
+      <input type="submit" name="" value="Calcular" class="btn btn-primary">
+    </form>
+
+
+<h2>Find who made this Site <a href="{% url 'madeby' %}">Here</a></h2>
